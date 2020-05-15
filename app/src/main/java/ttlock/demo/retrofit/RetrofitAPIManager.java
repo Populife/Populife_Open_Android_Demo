@@ -20,7 +20,7 @@ import retrofit2.Retrofit;
 
 public class RetrofitAPIManager {
 
-    public static final String SERVER_URL = "https://api.ttlock.com.cn";
+    public static final String SERVER_URL = "https://api.populife.co";
 
     public static ApiService provideClientApi() {
         Retrofit retrofit = new Retrofit.Builder()

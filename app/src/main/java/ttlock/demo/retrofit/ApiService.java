@@ -18,7 +18,7 @@ public interface ApiService {
 
     public static final String CLIENT_ID = "439063e312444f1f85050a52efcecd2e";
     public static final String CLIENT_SECRET = "0ef1c49b70c02ae6314bde603d4e9b05";
-    public static final String REDIRECT_URI = "http://open.ttlock.com.cn";
+    public static final String REDIRECT_URI = "https://www.populife.co";
 
 
     @POST("/lockRecords/fromLock")
