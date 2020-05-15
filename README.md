@@ -1,13 +1,10 @@
 # NewSDKAndroidDemo
 
-## English instruction link
-https://github.com/ttlock/Android_SDK_Demo/blob/master/README.en.md
-
-#### 介绍
-新版SDK Android端Demo<br />
-1.锁操作相关： TTLockClient<br />
-2.锁固件升级相关：LockDfuClient<br />
-3.网关操作相关：GatewayClient<br />
+#### Software Architecture:
+Software architecture description<br />
+1.Lock Operate Api:TTLockClient<br />
+2.Lock firmware update Api:LockDfuClient<br />
+3.Gateway Api:GatewayClient<br />
 
 #### IDE
 Android Studio
@@ -15,14 +12,12 @@ Android Studio
 #### Minimum SDK Version
 18
 
-## 使用说明
-### 引入SDK
+### Import
 ```
 implementation 'com.tongtonglock:ttlock:3.0.6'
 ```
 
-### manifest配置
-#### 添加Permission
+#### add permission in manifest
 ```
 <uses-permission android:name="android.permission.BLUETOOTH" />
 <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -30,15 +25,15 @@ implementation 'com.tongtonglock:ttlock:3.0.6'
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
-### SDK初始化
+### Init SDK
 
-#### 1)确保蓝牙开启
-#### 2)SDK初始化
+#### 1)Before call sdk api,make sure bluetooth is enabled
+#### 2)Init SDK
 ```
 TTLockClient.getDefault().prepareBTService(getApplicationContext());
 ```
 
-#### 3)开始调用接口 比如扫描周围蓝牙智能锁:
+#### 3)Use api
 ```
 TTLockClient.getDefault().startScanLock(new ScanLockCallback() {
     @Override
@@ -47,8 +42,8 @@ TTLockClient.getDefault().startScanLock(new ScanLockCallback() {
     }
 });
 ```
-### 重置SDK服务
-#### 退出页面之后记得关闭SDK服务
+### Reset SDK
+#### When Activity finished,you should close SDK service
 ```
 TTLockClient.getDefault().stopBTService();
 ```
